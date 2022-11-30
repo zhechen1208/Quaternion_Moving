@@ -3,10 +3,9 @@
 #include <iostream>
 #include <cmath>
 #include <boost\math\quaternion.hpp>
-#include <boost\numeric\ublas\vector.hpp>
 using namespace std;
 using namespace boost::math;
-using namespace boost::numeric::ublas;
+
 class RigidBody
 {
     public:
@@ -19,11 +18,13 @@ class RigidBody
                 this->m_Position[i] = Position[i];
             }      
         }
-        void getMoment(double **Force, int *F_Position, int num);
-        void getAngAcc();
-        void getAngVel(double time);
-        void getQ_RungeKutta(quaternion<double> &q, double time, double time_step);
-        void Moving();
+        void getInertia(double *Inertia);
+        void getMoment(double (*Force)[3], int *F_Position, int num);
+        quaternion<double> getAngAcc();
+        void NewMark(double time, double time_step, quaternion<double> &q);
+        //void getAngVel(double time);
+        //void getQ_RungeKutta(quaternion<double> &q, double time, double time_step);
+        void Moving(double (*Force)[3], int *F_Position, int F_num);
         ~RigidBody()
         {
             delete[] m_Position;

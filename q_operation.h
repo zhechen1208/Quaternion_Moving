@@ -2,10 +2,8 @@
 #include <iostream>
 #include <cmath>
 #include <boost\math\quaternion.hpp>
-#include <boost\numeric\ublas\vector.hpp>
 using namespace std;
 using namespace boost::math;
-using namespace boost::numeric::ublas;
 
 template<typename T>
 quaternion<T> q_diff(quaternion<T> &q, quaternion<T> &AngVel)

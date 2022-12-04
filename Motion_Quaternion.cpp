@@ -31,6 +31,7 @@ int main()
     return 0;
 }
 
+
 void RigidBody::Motion(double &time, double time_step, int Iteration_num,
  string Force_FileName, string Rigid_FileName, string disp_outputFileName, string dynamic_outputFileName)
 {
@@ -69,10 +70,10 @@ void RigidBody::Motion(double &time, double time_step, int Iteration_num,
         ofs_disp << fixed << setprecision(4) << time << "s";
         for (int j = 0; j < this->m_Rnum; j++)
         {
-            if(j != 0)
-            {
-                ofs_disp << "\t" << left << setw(1);
-            }
+            // if(j != 0)
+            // {
+            //     ofs_disp << "\t" << left << setw(1);
+            // }
             ofs_disp << fixed << setprecision(7)
                      << left << setw(2)
                      << "\t" << left << setw(14) << this->m_GlobalCoordinate[j].R_component_2()

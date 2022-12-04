@@ -2,8 +2,10 @@
 #include <iostream>
 #include <cmath>
 #include <boost\math\quaternion.hpp>
+#include <boost\numeric\ublas\vector.hpp>
 using namespace std;
 using namespace boost::math;
+
 
 template<typename T>
 quaternion<T> q_diff(quaternion<T> &q, quaternion<T> &AngVel)
@@ -19,7 +21,7 @@ quaternion<T> q_normalize(quaternion<T> q)
     q_nor = q / boost::math::abs(q);
     return q_nor;
 }
-quaternion<double> PureQuater_dot(quaternion<double> A, quaternion<double> B)
+quaternion<double> PureQuater_dot(const quaternion<double> &A, const quaternion<double> &B)
 {  
     double b;
     double c;
@@ -30,7 +32,7 @@ quaternion<double> PureQuater_dot(quaternion<double> A, quaternion<double> B)
     quaternion<double> result(0, b, c, d);
     return result;
 }
-quaternion<double> PureQuater_cross(quaternion<double> A, quaternion<double> B)
+quaternion<double> PureQuater_cross(const quaternion<double> &A, const quaternion<double> &B)
 {  
     double b;
     double c;

@@ -1,0 +1,19 @@
+Rigid_Mass:
+1.0
+Rigid_Inertia:
+1.0 1.0 1.0
+Rigid_Vel:
+0 0 0
+Rigid_Acc:
+0 0 0
+Rigid_AngVel:
+0 0 0
+Rigid_AngAcc:
+0 0 0
+Rigid_Center:
+2.0 0 0
+Rigid_Position:
+1.0 0 0
+2.0 0 0
+3.0 0 0
+4.0 0 0
